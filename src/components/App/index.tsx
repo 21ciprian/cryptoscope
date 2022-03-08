@@ -1,8 +1,19 @@
 import React from 'react'
+// import {Switch, Route, Link} from 'react-router-dom'
+// import {Layout, Typography, Space} from 'antd'
+import Navbar from '../Navbar'
 import './App.css'
 
 function App() {
-	return <div className='App'>app</div>
+	return (
+		<section className='app'>
+			<section className='navbar'>
+				<Navbar />
+			</section>
+			<section className='main'></section>
+			<section className='footer'></section>
+		</section>
+	)
 }
 
 export default App
