@@ -1,13 +1,13 @@
-import {Avatar, Button, Typography} from 'antd'
+import {
+	BulbOutlined,
+	FundOutlined,
+	HomeOutlined,
+	MenuOutlined,
+	MoneyCollectOutlined,
+} from '@ant-design/icons'
+import {Avatar, Button, Menu, Typography} from 'antd'
 import React from 'react'
 import {Link} from 'react-router-dom'
-// import {
-// 	HomeOutlined,
-// 	MoneyCollectFilled,
-// 	BulbOutlined,
-// 	FundOutlined,
-// 	MenuOutlined,
-// } from '@ant-design/icons'
 import logo from '../../assets/clogo.png'
 
 type Props = {text: string}
@@ -22,6 +22,21 @@ const Navbar = ({text}: Props) => {
 				</Typography.Title>
 				<Button className='menu__control-container'></Button>
 			</div>
+			<Menu.Item icon={<HomeOutlined />}>
+				<Link to='/'>Home</Link>
+			</Menu.Item>
+			<Menu.Item icon={<FundOutlined />}>
+				<Link to='/crypto'>Crypto</Link>
+			</Menu.Item>
+			<Menu.Item icon={<MoneyCollectOutlined />}>
+				<Link to='/exchanges'>Exchanges</Link>
+			</Menu.Item>
+			<Menu.Item icon={<BulbOutlined />}>
+				<Link to='/news'>News</Link>
+			</Menu.Item>
+			<Menu.Item icon={<MenuOutlined />}>
+				<Link to='/menu'>Menu</Link>
+			</Menu.Item>
 		</nav>
 	)
 }
