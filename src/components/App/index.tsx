@@ -8,7 +8,7 @@ function App() {
 	return (
 		<section className='app'>
 			<section className='navbar'>
-				<Navbar />
+				<Navbar text='navbar' />
 			</section>
 			<section className='main'></section>
 			<section className='footer'></section>
