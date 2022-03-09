@@ -3,6 +3,7 @@ import React from 'react'
 import {Route, Routes} from 'react-router-dom'
 import CryptoCurrencies from '../Cryptocurrencies'
 import Exchanges from '../Exchanges'
+import Footer from '../Footer'
 import Home from '../Home'
 import Navbar from '../Navbar'
 import News from '../News'
@@ -28,7 +29,9 @@ function App() {
 					<Space></Space>
 				</Layout>
 			</section>
-			<section className='footer'></section>
+			<section className='footer'>
+				<Footer />
+			</section>
 		</section>
 	)
 }
