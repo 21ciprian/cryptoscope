@@ -1,7 +1,11 @@
+import {Layout, Space, Typography} from 'antd'
 import React from 'react'
-// import {Switch, Route, Link} from 'react-router-dom'
-// import {Layout, Typography, Space} from 'antd'
+import {Route, Routes} from 'react-router-dom'
+import CryptoCurrencies from '../Cryptocurrencies'
+import Exchanges from '../Exchanges'
+import Home from '../Home'
 import Navbar from '../Navbar'
+import News from '../News'
 import './App.css'
 
 function App() {
@@ -10,7 +14,20 @@ function App() {
 			<section className='navbar'>
 				<Navbar text='navbar' />
 			</section>
-			<section className='main'></section>
+			<section className='main'>
+				<Layout>
+					<div className='routes'>
+						<Routes>
+							<Route path='/' element={<Home />} />
+							<Route path='/crypto' element={<CryptoCurrencies />} />
+							<Route path='/exchanges' element={<Exchanges />} />
+							<Route path='/news' element={<News />} />
+						</Routes>
+					</div>
+					<Typography></Typography>
+					<Space></Space>
+				</Layout>
+			</section>
 			<section className='footer'></section>
 		</section>
 	)

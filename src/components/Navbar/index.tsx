@@ -22,21 +22,23 @@ const Navbar = ({text}: Props) => {
 				</Typography.Title>
 				<Button className='menu__control-container'></Button>
 			</div>
-			<Menu.Item icon={<HomeOutlined />}>
-				<Link to='/'>Home</Link>
-			</Menu.Item>
-			<Menu.Item icon={<FundOutlined />}>
-				<Link to='/crypto'>Crypto</Link>
-			</Menu.Item>
-			<Menu.Item icon={<MoneyCollectOutlined />}>
-				<Link to='/exchanges'>Exchanges</Link>
-			</Menu.Item>
-			<Menu.Item icon={<BulbOutlined />}>
-				<Link to='/news'>News</Link>
-			</Menu.Item>
-			<Menu.Item icon={<MenuOutlined />}>
-				<Link to='/menu'>Menu</Link>
-			</Menu.Item>
+			<Menu>
+				<Menu.Item key='home' icon={<HomeOutlined />}>
+					<Link to='/'>Home</Link>
+				</Menu.Item>
+				<Menu.Item key='crypto' icon={<FundOutlined />}>
+					<Link to='/crypto'>Crypto</Link>
+				</Menu.Item>
+				<Menu.Item key='exchange' icon={<MoneyCollectOutlined />}>
+					<Link to='/exchanges'>Exchanges</Link>
+				</Menu.Item>
+				<Menu.Item key='news' icon={<BulbOutlined />}>
+					<Link to='/news'>News</Link>
+				</Menu.Item>
+				<Menu.Item key='menu' icon={<MenuOutlined />}>
+					<Link to='/menu'>Menu</Link>
+				</Menu.Item>
+			</Menu>
 		</nav>
 	)
 }
