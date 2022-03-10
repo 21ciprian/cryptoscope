@@ -1,7 +1,10 @@
 import {Col, Row, Statistic, Typography} from 'antd'
 import millify from 'millify'
 import React from 'react'
+import {Link} from 'react-router-dom'
 import {useGetCryptosQuery} from '../../services/cryptoApi'
+import Cryptocurrencies from '../Cryptocurrencies'
+import News from '../News'
 const {Title} = Typography
 
 function Home() {
@@ -48,6 +51,24 @@ function Home() {
 				</Col>
 				<Col span={12}></Col>
 			</Row>
+			<section className='home__heading-container'>
+				<Title level={2} className='home__title'>
+					Top 10 Cryptocurrencies in the world
+				</Title>
+				<Title level={3} className='show-more'>
+					<Link to='/crypto'>Show More</Link>
+				</Title>
+			</section>
+			<Cryptocurrencies />
+			<section className='home__heading-container'>
+				<Title level={2} className='home__title'>
+					Latest Crypto News
+				</Title>
+				<Title level={3} className='show-more'>
+					<Link to='/crypto'>Show More</Link>
+				</Title>
+			</section>
+			<News />
 		</>
 	)
 }
