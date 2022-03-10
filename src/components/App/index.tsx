@@ -20,7 +20,7 @@ function App() {
 					<div className='routes'>
 						<Routes>
 							<Route path='/' element={<Home />} />
-							<Route path='/crypto' element={<CryptoCurrencies />} />
+							<Route path='/crypto' element={<CryptoCurrencies simplified />} />
 							<Route path='/exchanges' element={<Exchanges />} />
 							<Route path='/news' element={<News />} />
 						</Routes>

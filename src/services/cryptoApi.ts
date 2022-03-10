@@ -1,4 +1,12 @@
 import {createApi, fetchBaseQuery} from '@reduxjs/toolkit/query/react'
+import {Coin} from '../components/Cryptocurrencies'
+export type Query = {
+	data: {
+		stats: any
+		coins: Coin[]
+		status: string
+	}
+}
 const cryptoApiHeaders = {
 	'x-rapidapi-host': process.env.REACT_APP_RCHOST,
 	'x-rapidapi-key': process.env.REACT_APP_RCKEY,
@@ -10,8 +18,8 @@ export const cryptoApi = createApi({
 	reducerPath: 'cryptoApi',
 	baseQuery: fetchBaseQuery({baseUrl}),
 	endpoints: builder => ({
-		getCryptos: builder.query<any, void>({
-			query: () => createRequest('/coins'),
+		getCryptos: builder.query<Query, void | undefined | number>({
+			query: count => createRequest(`/coins?limit=${count}`),
 		}),
 	}),
 })

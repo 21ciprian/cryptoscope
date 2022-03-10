@@ -8,7 +8,7 @@ import News from '../News'
 const {Title} = Typography
 
 function Home() {
-	const {data, isFetching} = useGetCryptosQuery()
+	const {data, isFetching} = useGetCryptosQuery(10)
 	console.log('data:', data)
 	const globalStats = data?.data?.stats
 	if (isFetching) return <h2>'...Loading'</h2>
@@ -59,7 +59,7 @@ function Home() {
 					<Link to='/crypto'>Show More</Link>
 				</Title>
 			</section>
-			<Cryptocurrencies />
+			<Cryptocurrencies simplified />
 			<section className='home__heading-container'>
 				<Title level={2} className='home__title'>
 					Latest Crypto News
