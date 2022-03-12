@@ -5,10 +5,10 @@ import {
 	MenuOutlined,
 	MoneyCollectOutlined,
 } from '@ant-design/icons'
-import {Avatar, Button, Menu, Typography} from 'antd'
+import {Avatar, Input, Menu, Typography} from 'antd'
 import React from 'react'
 import {Link} from 'react-router-dom'
-import logo from '../../assets/clogo.png'
+import logo from '../../assets/omi.svg'
 
 type Props = {text: string}
 
@@ -16,13 +16,20 @@ const Navbar = ({text}: Props) => {
 	return (
 		<nav className='nav__container'>
 			<div className='nav__logo-container'>
-				<Avatar src={logo} size='large' />
+				<Avatar src={logo} size='large' shape='square' className='logo-img' />
 				<Typography.Title level={2} className='logo'>
 					<Link to='/'>CryptoScope</Link>
 				</Typography.Title>
-				<Button className='menu__control-container'></Button>
+				{/* <Button className='menu__control-container'></Button> */}
 			</div>
 			<Menu>
+				<Input
+					className='nav-search'
+					placeholder='Search Cryptocurrencies...'
+					onChange={(e: React.FormEvent<HTMLInputElement>) =>
+						console.log(e.currentTarget.value)
+					}
+				/>
 				<Menu.Item key='home' icon={<HomeOutlined />}>
 					<Link to='/'>Home</Link>
 				</Menu.Item>

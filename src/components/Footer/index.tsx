@@ -6,7 +6,9 @@ type Props = {}
 function Footer({}: Props) {
 	return (
 		<footer>
-			<Typography.Title level={5}>&copy; Cryptoscope</Typography.Title>
+			<Typography.Title level={5}>
+				&copy; CryptoScope {new Date().getFullYear()}
+			</Typography.Title>
 			<Space>
 				<Link to='/'>Home</Link>
 				<Link to='/crypto'>CryptoCurrencies</Link>

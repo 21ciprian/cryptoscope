@@ -1,6 +1,5 @@
 import {Col, Row, Statistic, Typography} from 'antd'
 import millify from 'millify'
-import React from 'react'
 import {Link} from 'react-router-dom'
 import {useGetCryptosQuery} from '../../services/cryptoApi'
 import Cryptocurrencies from '../Cryptocurrencies'
@@ -11,8 +10,8 @@ function Home() {
 	const {data, isFetching} = useGetCryptosQuery(10)
 	console.log('data:', data)
 	const globalStats = data?.data?.stats
-	if (isFetching) return <h2>'...Loading'</h2>
 
+	if (isFetching) return <h2>'...Loading'</h2>
 	return (
 		<>
 			<Title level={2} className='title__heading'>

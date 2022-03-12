@@ -1,4 +1,4 @@
-import {Layout, Space, Typography} from 'antd'
+import {Layout} from 'antd'
 import React from 'react'
 import {Route, Routes} from 'react-router-dom'
 import CryptoCurrencies from '../Cryptocurrencies'
@@ -25,12 +25,10 @@ function App() {
 							<Route path='/news' element={<News />} />
 						</Routes>
 					</div>
-					<Typography></Typography>
-					<Space></Space>
 				</Layout>
-			</section>
-			<section className='footer'>
-				<Footer />
+				<section className='footer'>
+					<Footer />
+				</section>
 			</section>
 		</section>
 	)

@@ -29,6 +29,7 @@ type Crypto = {
 
 function Cryptocurrencies({simplified}: Crypto) {
 	const count = simplified ? 10 : 100
+	console.log('simplified in crypto: ', simplified)
 	const {data: cryptosList, isFetching} = useGetCryptosQuery(count)
 	const [cryptos, setCryptos] = useState<Coin[] | undefined>([])
 	const [search, setSearch] = useState<string>('')
@@ -43,19 +44,23 @@ function Cryptocurrencies({simplified}: Crypto) {
 	if (isFetching) return <h2>Loading...</h2>
 	return (
 		<>
-			{!simplified && (
-				<div>
-					<Input
-						placeholder='Search Cryptocurrencies...'
-						onChange={(e: React.FormEvent<HTMLInputElement>) =>
-							setSearch(e.currentTarget.value)
-						}
-					/>
-				</div>
-			)}
+			<div className='search-crypto'>
+				<Input
+					placeholder='Search Cryptocurrencies...'
+					onChange={(e: React.FormEvent<HTMLInputElement>) =>
+						setSearch(e.currentTarget.value)
+					}
+				/>
+			</div>
+
 			<Row gutter={[32, 32]} className='crypto__card-container'>
 				{cryptos?.map(currency => (
-					<Col xs={24} sm={12} lg={6} key={currency.uuid}>
+					<Col
+						xs={24}
+						sm={12}
+						lg={6}
+						key={currency.uuid}
+						className='crypto__card'>
 						<Link to={`/crypto/${currency.uuid}`}>
 							<Card
 								title={`${currency.rank}. ${currency.name}`}
