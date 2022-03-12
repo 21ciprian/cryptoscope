@@ -2,12 +2,8 @@ import {Card, Col, Row, Typography} from 'antd'
 import React from 'react'
 import {useGetCryptoNewsQuery} from '../../services/cryptoNewsApi'
 const {Title} = Typography
-type Props = {
-	data: {
-		_type: string
-		name: string
-	}
-}
+const demoImage =
+	'http://coinrevolution.com/wp-comtent/uploads/2020/06/cryptonews.jpg'
 
 function News() {
 	const {data: cryptoNews} = useGetCryptoNewsQuery({
@@ -26,6 +22,15 @@ function News() {
 								<Title className='news-titel' level={4}>
 									{news.name}
 								</Title>
+								<img
+									src={news?.image?.thumbnail?.contentUrl || demoImage}
+									alt={news.name}
+								/>
+								<p>
+									{news.description.length > 100
+										? `${news.description.substring(0, 95)}...`
+										: news.description}
+								</p>
 							</div>
 						</a>
 					</Card>
