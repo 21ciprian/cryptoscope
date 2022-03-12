@@ -1,5 +1,13 @@
 import {createApi, fetchBaseQuery} from '@reduxjs/toolkit/query/react'
-
+export type Provider = {
+	_type: string
+	name: string
+	image: {
+		thumbnail: {
+			contentUrl: string
+		}
+	}
+}
 export type Value = {
 	url: string
 	_type: string
@@ -11,6 +19,7 @@ export type Value = {
 			contentUrl: string
 		}
 	}
+	provider: Provider[]
 }
 export type Category = {
 	newsCategory: string
@@ -31,7 +40,7 @@ export const cryptoNewsApi = createApi({
 		getCryptoNews: builder.query<Category, Category | undefined | any>({
 			query: ({newsCategory, count}) =>
 				createRequest(
-					`/news/search?=${newsCategory}&safeSearch=Off&textFormat=Raw&freshness=Day&count=${count}`
+					`/news/search?q=${newsCategory}&safeSearch=Off&textFormat=Raw&freshness=Day&count=${count}`
 				),
 		}),
 	}),

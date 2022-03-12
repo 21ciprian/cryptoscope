@@ -22,14 +22,14 @@ const Navbar = ({text}: Props) => {
 				</Typography.Title>
 				{/* <Button className='menu__control-container'></Button> */}
 			</div>
+			<Input
+				className='nav-search'
+				placeholder='Search Cryptocurrencies...'
+				onChange={(e: React.FormEvent<HTMLInputElement>) =>
+					console.log(e.currentTarget.value)
+				}
+			/>
 			<Menu>
-				<Input
-					className='nav-search'
-					placeholder='Search Cryptocurrencies...'
-					onChange={(e: React.FormEvent<HTMLInputElement>) =>
-						console.log(e.currentTarget.value)
-					}
-				/>
 				<Menu.Item key='home' icon={<HomeOutlined />}>
 					<Link to='/'>Home</Link>
 				</Menu.Item>

@@ -2,6 +2,7 @@ import {Layout} from 'antd'
 import React from 'react'
 import {Route, Routes} from 'react-router-dom'
 import CryptoCurrencies from '../Cryptocurrencies'
+import CryptoDetails from '../CryptoDetails'
 import Exchanges from '../Exchanges'
 import Footer from '../Footer'
 import Home from '../Home'
@@ -21,6 +22,7 @@ function App() {
 						<Routes>
 							<Route path='/' element={<Home />} />
 							<Route path='/crypto' element={<CryptoCurrencies simplified />} />
+							<Route path='/crypto/:id' element={<CryptoDetails />} />
 							<Route path='/exchanges' element={<Exchanges />} />
 							<Route path='/news' element={<News />} />
 						</Routes>
