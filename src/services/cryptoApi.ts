@@ -7,6 +7,10 @@ export type Query = {
 		status: string
 	}
 }
+export type History = {
+	coinId: string | undefined
+	timePeriod: string | undefined
+}
 const cryptoApiHeaders = {
 	'x-rapidapi-host': process.env.REACT_APP_RCHOST,
 	'x-rapidapi-key': process.env.REACT_APP_RCKEY,
@@ -24,6 +28,14 @@ export const cryptoApi = createApi({
 		getCryptoDetails: builder.query({
 			query: coinId => createRequest(`/coin/${coinId}`),
 		}),
+		getCryptoHistory: builder.query<any, any>({
+			query: ({coinId, timePeriod}) =>
+				createRequest(`/coin/${coinId}/history?timePeriod=${timePeriod}`),
+		}),
 	}),
 })
-export const {useGetCryptosQuery, useGetCryptoDetailsQuery} = cryptoApi
+export const {
+	useGetCryptosQuery,
+	useGetCryptoDetailsQuery,
+	useGetCryptoHistoryQuery,
+} = cryptoApi
