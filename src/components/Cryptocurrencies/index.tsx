@@ -4,6 +4,11 @@ import {useEffect, useState} from 'react'
 import {Link} from 'react-router-dom'
 import {useGetCryptosQuery} from '../../services/cryptoApi'
 
+export type LinkProps = {
+	name: string
+	type: string
+	url: string
+}
 export type Coin = {
 	'24hVolume': string
 	btcPrice: string
@@ -21,6 +26,19 @@ export type Coin = {
 	symbol: string
 	tier: number
 	uuid: string
+	allTimeHigh: {
+		price: string
+		timestamp: string
+	}
+	numberOfMarkets: number
+	numberOfExchanges: number
+	supply: {
+		total: string
+		confirmed: boolean
+		circulating: string
+	}
+	description: string
+	links: LinkProps[]
 }
 
 type Crypto = {
