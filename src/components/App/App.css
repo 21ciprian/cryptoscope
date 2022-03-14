@@ -83,6 +83,9 @@ a:hover {
 	min-height: 86.5vh;
 	margin-bottom: 2rem;
 }
+.news-container {
+	padding: 2rem;
+}
 .footer {
 	background-color: var(--bgTernary);
 	width: 100%;

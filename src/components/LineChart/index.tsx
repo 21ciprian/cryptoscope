@@ -46,11 +46,11 @@ function LineChart({coinHistory, currentPrice, coinName}: Props) {
 			).toLocaleDateString('en-US')
 		)
 	}
-	console.log('coinTimestamp[0]: ', coinTimestamp[0])
-	console.log(
-		'coinHistory.data.history[0].timestamp: ',
-		coinHistory.data.history[0].timestamp
-	)
+	// console.log('coinTimestamp[0]: ', coinTimestamp[0])
+	// console.log(
+	// 	'coinHistory.data.history[0].timestamp: ',
+	// 	coinHistory.data.history[0].timestamp
+	// )
 	const data = {
 		labels: coinTimestamp,
 		datasets: [

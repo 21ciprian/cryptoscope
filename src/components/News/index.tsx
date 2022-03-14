@@ -21,7 +21,7 @@ function News() {
 	console.log('cryptoNews: ', cryptoNews)
 	if (!cryptoNews?.value) return <h2>Loading</h2>
 	return (
-		<Row gutter={[24, 24]}>
+		<Row gutter={[24, 24]} className='news-container'>
 			<Col span={24}>
 				<Select
 					showSearch
