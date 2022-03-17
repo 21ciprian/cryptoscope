@@ -20,7 +20,6 @@ const Navbar = ({text}: Props) => {
 				<Typography.Title level={2} className='logo'>
 					<Link to='/'>CryptoScope</Link>
 				</Typography.Title>
-				{/* <Button className='menu__control-container'></Button> */}
 			</div>
 			<Input
 				className='nav-search'
@@ -29,7 +28,7 @@ const Navbar = ({text}: Props) => {
 					console.log(e.currentTarget.value)
 				}
 			/>
-			<Menu>
+			<Menu className='menu'>
 				<Menu.Item key='home' icon={<HomeOutlined />}>
 					<Link to='/'>Home</Link>
 				</Menu.Item>

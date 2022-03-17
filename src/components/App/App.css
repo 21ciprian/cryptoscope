@@ -26,46 +26,68 @@ a:hover {
 	width: 100vw;
 }
 .navbar {
+	/* width: 20%; */
 	flex: 0.2;
-	/* width: 10vw; */
+	position: relative;
+
+	/* width: 26vw; */
 	background-color: var(--bgTernary);
 }
 
-.main {
-	flex: 0.86;
-	flex-direction: column;
-	justify-content: space-between;
-	height: 100vh;
-	width: 100%;
-	background-color: var(--bgSecondary);
-}
 .nav__container {
 	position: fixed;
 	left: 0;
 	height: 100vh;
-	width: 20vw;
-	background-color: var(--bgSecondary);
+	width: 20%;
+	background-color: inherit;
 }
 .nav__logo-container {
 	background-color: var(--bgTernary);
 	display: flex;
 	padding: 20px;
-	align-items: center;
 	width: 100%;
 }
+
 .logo {
-	margin: 0 0 0 15px;
+	padding: none;
+	margin: none;
+	position: relative;
 }
 .logo a {
 	color: white;
+	max-width: fit-content;
+
 	text-decoration: none;
+	position: absolute;
+	bottom: -22px;
+	left: 5px;
 }
 .logo-img {
-	width: 3rem;
+	padding: none;
+	margin: none;
 }
 
 .search {
 	color: black;
+}
+.menu {
+	background-color: inherit;
+	color: skyblue;
+}
+.menu a {
+	color: skyblue;
+}
+.main {
+	flex: 0.8;
+	/* width: 80%; */
+	border: 2px solid red;
+	/* flex: 0.86; */
+	flex-direction: column;
+	justify-content: space-between;
+	height: 100vh;
+	/* width: 100%; */
+	background-color: var(--bgSecondary);
+	/* padding-left: 2rem; */
 }
 .crypto__card-container {
 	min-height: 65vh !important;
